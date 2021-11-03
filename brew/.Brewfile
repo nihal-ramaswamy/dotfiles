@@ -1,0 +1,16 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+
+brew "gnu-time"
+brew "stow"
+
+cask "font-hack"
+
+cask "appcleaner"
+cask "discord"
+cask "google-chrome"
+cask "iterm2"
+cask "sublime-text"
+cask "vlc"
