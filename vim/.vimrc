@@ -9,6 +9,8 @@ set wildmenu
 syntax on
 filetype plugin on
 
+let mapleader = " "
+
 "" General
 set number relativenumber  " Show line numbers
 set linebreak   " Break lines at word (requires Wrap lines)
