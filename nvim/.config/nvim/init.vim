@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'phanviet/vim-monokai-pro'
 Plug 'preservim/nerdtree'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -43,6 +44,9 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+let g:tmux_navigator_save_on_switch = 2
+let g:tmux_navigator_disable_when_zoomed = 1
 
 " Snippets:
 " nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
