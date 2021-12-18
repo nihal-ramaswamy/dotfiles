@@ -118,3 +118,8 @@ fi
 
 
 ulimit -s 2000123
+
+if [ "$TERM_PROGRAM" == "Terminus-Sublime" ]; then
+    bind '"\e[1;3C": forward-word'
+    bind '"\e[1;3D": backward-word'
+fi
