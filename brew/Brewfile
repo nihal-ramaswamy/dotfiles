@@ -10,7 +10,6 @@ cask "font-hack"
 
 cask "appcleaner"
 cask "discord"
-cask "gcc"
 cask "google-chrome"
 cask "iterm2"
 cask "spotify"
