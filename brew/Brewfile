@@ -3,6 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 
+brew "gcc"
 brew "gnu-time"
 brew "stow"
 
