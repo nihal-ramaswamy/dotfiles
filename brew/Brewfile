@@ -6,6 +6,7 @@ tap "homebrew/core"
 brew "gcc"
 brew "gnu-time"
 brew "stow"
+brew "neovim"
 
 cask "font-hack"
 

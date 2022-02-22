@@ -1,6 +1,6 @@
 export PIP_REQUIRE_VIRTUALENV=true
 gpip() {
-  PIP_REQUIRE_VIRTUALENV="" pip "$@"
+  PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
 }
 
 if [ "$TERM_PROGRAM" = "Terminus-Sublime" ]; then
