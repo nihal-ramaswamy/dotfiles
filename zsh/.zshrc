@@ -3,10 +3,5 @@ gpip() {
   PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
 }
 
-if [ "$TERM_PROGRAM" = "Terminus-Sublime" ]; then
-  bindkey "\e[1;3C" forward-word
-  bindkey "\e[1;3D" backward-word
-fi
-
-export EDITOR='vim'
+export EDITOR='nvim'
 setopt HIST_IGNORE_SPACE
