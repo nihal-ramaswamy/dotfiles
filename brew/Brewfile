@@ -12,7 +12,7 @@ cask "font-hack"
 
 cask "appcleaner"
 cask "discord"
-cask "google-chrome"
+cask "brave-browser"
 cask "iterm2"
 cask "spotify"
 cask "sublime-text"
