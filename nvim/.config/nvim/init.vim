@@ -31,7 +31,6 @@ set wildmode=longest,list
 set mouse=a
 
 call plug#begin()
-    Plug 'SirVer/ultisnips'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'tpope/vim-commentary'
@@ -52,11 +51,6 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<c-j>'
-let g:UltiSnipsJumpBackwardTrigger='<c-k>'
-let g:UltiSnipsSnippetDirectories=["mysnippets"]
-
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
@@ -68,4 +62,3 @@ augroup NTG
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
 
-autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++20 -O2 -Wall -Wshadow -Wno-unused-result -Wfloat-equal -Wl,-stack_size,0x10000000 % -o %:r <CR>
