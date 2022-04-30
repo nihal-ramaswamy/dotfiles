@@ -2,30 +2,17 @@ syntax on
 filetype plugin indent on
 let mapleader = " "
 
-set cursorline
+set cursorline colorcolumn=80
 set lazyredraw
 set path+=**
 set title
 set number relativenumber
-set linebreak
-set scrolloff=3
-set sidescrolloff=3
-set showbreak=+++
+set wrap linebreak showbreak=+++
 set textwidth=79
-set showmatch
-set smartcase
-set ignorecase
-set expandtab
-set shiftwidth=4
-set smartindent
-set softtabstop=4
-set tabstop=4
-set autochdir
-set autowriteall
+set showmatch smartcase ignorecase
+set expandtab smartindent shiftwidth=4 softtabstop=4 tabstop=4
+set autochdir autowriteall
 set undolevels=1000
-set wrap
-set noswapfile
-set colorcolumn=80
 set clipboard=unnamedplus
 set wildmode=longest,list
 set mouse=a
@@ -33,13 +20,22 @@ set mouse=a
 call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-fugitive'
+    Plug 'edkolev/tmuxline.vim'
     Plug 'preservim/nerdtree'
     Plug 'tanvirtin/monokai.nvim'
 call plug#end()
 
 colorscheme monokai
 let g:airline_theme='molokai'
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_section_z = "%3p%% %l:%c"
+let g:airline#extensions#tmuxline#enabled = 1
 
 nnoremap j gj
 nnoremap k gk
