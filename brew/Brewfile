@@ -3,13 +3,10 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 
-brew "gcc"
 brew "gnu-time"
 brew "stow"
 brew "svn"
-
-cask "font-hack"
-cask "font-source-code-pro"
+brew "tmux"
 
 cask "appcleaner"
 cask "discord"

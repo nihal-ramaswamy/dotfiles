@@ -20,10 +20,19 @@ brew install stow
 
 Run stow:
 ```bash
-stow -vSt ~ brew git vim zsh
+stow -vSt ~ brew git vim zsh nvim tmux
 ```
 
 Install packages from `brew`
 ```bash
 brew bundle --file ~/.Brewfile
+```
+
+Install `powerline fonts`
+```bash
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
 ```
