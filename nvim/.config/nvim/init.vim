@@ -2,7 +2,7 @@ syntax on
 filetype plugin indent on
 let mapleader = " "
 
-set cursorline colorcolumn=80
+set cursorline "colorcolumn=80
 set lazyredraw
 set path+=**
 set title
@@ -16,6 +16,7 @@ set undolevels=1000
 set clipboard=unnamedplus
 set wildmode=longest,list
 set mouse=a
+set completeopt=noinsert,menuone,noselect
 
 call plug#begin()
     Plug 'vim-airline/vim-airline'
@@ -23,6 +24,7 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
     Plug 'edkolev/tmuxline.vim'
     Plug 'preservim/nerdtree'
+    Plug 'sheerun/vim-polyglot'
     Plug 'tanvirtin/monokai.nvim'
 call plug#end()
 
@@ -34,7 +36,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_section_z = "%3p%% %l:%c"
+let g:airline_section_z = "%l:%c"
 let g:airline#extensions#tmuxline#enabled = 1
 
 nnoremap j gj
@@ -42,8 +44,8 @@ nnoremap k gk
 
 map <leader><space> :let @/=''<CR>
 
+let NERDTreeShowHidden=1
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
