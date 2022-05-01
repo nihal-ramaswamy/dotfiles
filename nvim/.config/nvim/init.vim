@@ -2,7 +2,7 @@ syntax on
 filetype plugin indent on
 let mapleader = " "
 
-set cursorline "colorcolumn=80
+set cursorline colorcolumn=80
 set lazyredraw
 set path+=**
 set title
@@ -22,9 +22,7 @@ call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'tpope/vim-fugitive'
-    Plug 'edkolev/tmuxline.vim'
     Plug 'preservim/nerdtree'
-    Plug 'sheerun/vim-polyglot'
     Plug 'tanvirtin/monokai.nvim'
 call plug#end()
 
