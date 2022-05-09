@@ -2,19 +2,17 @@ syntax on
 filetype plugin on
 
 set nocompatible
+set noundofile noswapfile nobackup
 set laststatus=2
-set lazyredraw
-set nocompatible
+set lazyredraw ttyfast
 set path+=**
 set title
-set ttyfast
 set wildmenu
 set number relativenumber
 set linebreak
 set scrolloff=3
 set sidescrolloff=3
 set showbreak=+++
-set textwidth=79
 set showmatch
 set visualbell
 set hlsearch
@@ -35,7 +33,6 @@ set backspace=indent,eol,start
 set wrap
 set listchars=tab:▸\ ,eol:¬
 set complete-=i
-set noswapfile
 set hidden
 set t_Co=256
 set background=dark
