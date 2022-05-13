@@ -44,7 +44,12 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim"
 
     -- Navigation Plugin
-    use "preservim/nerdtree"
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+            'kyazdani42/nvim-web-devicons', -- optional, for file icon
+        },
+    }
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
 

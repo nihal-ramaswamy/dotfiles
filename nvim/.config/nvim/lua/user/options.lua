@@ -1,3 +1,6 @@
+vim.cmd [[syntax on]]
+vim.cmd [[filetype plugin indent on]]
+
 local options = {
     signcolumn='yes:1',
     cursorline=true,
@@ -25,6 +28,9 @@ local options = {
 
     autochdir=true,
     autowriteall=true,
+    undolevels=1000,
+    undodir="~/.undodir",
+    undofile=true,
 
     clipboard='unnamedplus',
     mouse='a',
