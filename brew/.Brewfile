@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "homebrew/cask-fonts"
 
 brew "tmux"
 brew "stow"
@@ -13,3 +14,4 @@ cask "spotify"
 cask "sublime-text"
 cask "vlc"
 cask "iterm2"
+cask "font-hack-nerd-font"
