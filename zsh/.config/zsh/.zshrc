@@ -13,3 +13,4 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_RUNTIME_DIR="/run/user/$UID"
 
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc.py"
