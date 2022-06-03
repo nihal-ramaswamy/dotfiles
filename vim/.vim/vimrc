@@ -1,0 +1,31 @@
+set nocompatible
+syntax on
+
+set number relativenumber
+set laststatus=2
+set noerrorbells visualbell t_vb=
+set ignorecase smartcase incsearch hlsearch
+set showmatch
+set backspace=indent,eol,start
+set hidden
+set mouse+=a
+set clipboard=unnamed,unnamedplus
+set shortmess+=cI
+
+" Set viminfo to not come in home folder
+set viminfo+=n~/.vim/viminfo
+
+" Better Movement
+nnoremap j gj
+nnoremap k gk
+
+" Leader is space
+let mapleader = " "
+" Clear highlight after search
+map <leader><space> :noh<CR>
+
+call plug#begin()
+    Plug 'arcticicestudio/nord-vim'
+call plug#end()
+
+colorscheme nord

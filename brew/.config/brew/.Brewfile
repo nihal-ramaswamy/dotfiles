@@ -1,0 +1,18 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/cask-fonts"
+
+brew "tmux"
+brew "stow"
+brew "gnu-time"
+brew "gcc"
+
+cask "appcleaner"
+cask "discord"
+cask "brave-browser"
+cask "spotify"
+cask "sublime-text"
+cask "vlc"
+cask "font-hack-nerd-font"
+cask "kitty"
