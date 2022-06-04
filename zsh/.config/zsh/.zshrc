@@ -22,6 +22,7 @@ export XDG_RUNTIME_DIR="/run/user/$UID"
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc.py"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc 
+alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
 
 source $(brew --prefix)/share/antigen/antigen.zsh
 
