@@ -21,6 +21,7 @@ export XDG_RUNTIME_DIR="/run/user/$UID"
 
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc.py"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc 
 
 source $(brew --prefix)/share/antigen/antigen.zsh
 
@@ -32,7 +33,7 @@ antigen apply
 
 [ -f $XDG_CONFIG_HOME/zsh/.fzf.zsh ] && source $XDG_CONFIG_HOME/zsh/.fzf.zsh
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
-export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_DEFAULT_COMMAND="fd --type f --hidden"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.

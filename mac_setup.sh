@@ -9,7 +9,7 @@ git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/.tmux/plugins/t
 
 # Dotfile manager
 brew install stow
-stow -vSt ~ kitty brew git vim zsh tmux
+stow -vSt ~ python npm kitty brew git vim zsh tmux
 
 brew bundle --file $HOME/.config/brew/.Brewfile
 
