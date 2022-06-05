@@ -1,5 +1,10 @@
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#	Additional commands if using Mac with M1 Chip
+if [[ $(uname -m) == 'arm64' ]]; then
+    echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> ~/.zprofile 
+    eval $(/opt/homebrew/bin/brew shellenv)
+fi
 
 # Vimplug
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -9,7 +14,7 @@ git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/.tmux/plugins/t
 
 # Dotfile manager
 brew install stow
-stow -vSt ~ python npm kitty brew git vim zsh tmux
+stow -vSt ~ python npm kitty brew git vim zsh tmux yarn
 
 brew bundle --file $HOME/.config/brew/.Brewfile
 
