@@ -23,3 +23,4 @@ source $(brew --prefix)/share/antigen/antigen.zsh
 
 antigen apply
 
+eval "$(starship init zsh)"

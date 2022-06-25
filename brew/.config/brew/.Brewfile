@@ -8,6 +8,7 @@ brew "stow"
 brew "gnu-time"
 brew "gcc"
 brew "antigen"
+brew "starship"
 
 cask "appcleaner"
 cask "discord"
