@@ -1,8 +1,11 @@
 set nocompatible
 syntax on
 
+" Leader is space
+let mapleader = " "
+
 set number relativenumber
-set laststatus=2
+set laststatus=2 signcolumn=yes
 set noerrorbells visualbell t_vb=
 set ignorecase smartcase incsearch hlsearch
 set showmatch
@@ -19,8 +22,6 @@ set viminfo+=n~/.vim/viminfo
 nnoremap j gj
 nnoremap k gk
 
-" Leader is space
-let mapleader = " "
 " Clear highlight after search
 map <leader><space> :noh<CR>
 
