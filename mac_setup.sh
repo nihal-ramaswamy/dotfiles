@@ -17,9 +17,3 @@ brew install stow
 stow -vSt ~ python npm kitty brew git vim zsh tmux yarn
 
 brew bundle --file $HOME/.config/brew/.Brewfile
-
-# fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git $XDG_CONFIG_HOME/zsh/.fzf
-./$XDG_CONFIG_HOME/zsh/.fzf/install
-mv $HOME/.fzf.zsh $XDG_CONFIG_HOME/zsh
-
