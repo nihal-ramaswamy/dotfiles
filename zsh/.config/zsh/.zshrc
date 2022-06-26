@@ -24,3 +24,4 @@ source $(brew --prefix)/share/antigen/antigen.zsh
 antigen apply
 
 eval "$(starship init zsh)"
+eval $(gdircolors $XDG_CONFIG_HOME/dir_colors/dir_colors) 
