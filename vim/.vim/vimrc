@@ -30,3 +30,4 @@ call plug#begin()
 call plug#end()
 
 colorscheme nord
+
