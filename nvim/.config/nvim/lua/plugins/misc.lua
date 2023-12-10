@@ -1,9 +1,5 @@
 return {
   {
-    "christoomey/vim-tmux-navigator",
-    lazy = false,
-  },
-  {
     "nyoom-engineering/oxocarbon.nvim",
   },
   {
