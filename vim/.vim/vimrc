@@ -1,0 +1,52 @@
+syntax on               
+filetype on             
+filetype indent on     
+
+set nocompatible        
+set scrolloff=3         
+set ai                 
+
+set laststatus=2
+set noshowmode
+set showcmd             
+set nobackup            
+set number              
+set relativenumber
+set ruler              
+
+set hlsearch            
+set incsearch           
+set showmatch           
+set ignorecase          
+set smartcase          
+
+set visualbell t_vb=    
+set novisualbell       
+
+set backspace=indent,eol,start  
+set t_RV=     
+
+" Leader is space
+let mapleader = " "
+" Clear highlight after search
+nnoremap <leader><space> :noh<CR>
+
+call plug#begin()
+  Plug 'joshdick/onedark.vim'
+  Plug 'itchyny/lightline.vim'
+call plug#end()
+
+set background=dark t_Co=256
+colorscheme onedark 
+
+let g:lightline = {
+    \ 'colorscheme': 'onedark',
+    \ }
+
+" Set viminfo to not come in home folder
+set directory=$XDG_CACHE_HOME/vim/swap,~/,/tmp
+set backupdir=$XDG_STATE_HOME/vim/backup,~/,/tmp
+set undodir=$XDG_CACHE_HOME/vim/undo,~/,/tmp
+set viminfo+=n$XDG_STATE_HOME/vim/viminfo
+set runtimepath+=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
+

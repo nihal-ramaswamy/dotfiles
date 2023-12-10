@@ -1,0 +1,10 @@
+.DS_Store
+tmux/.config/tmux/plugins
+*Brewfile.lock.json
+*.zwc
+*.zsh_history
+*.zsh_sessions
+*.swp
+credentials
+vim/.vim/autoload
+vim/.vim/plugged
