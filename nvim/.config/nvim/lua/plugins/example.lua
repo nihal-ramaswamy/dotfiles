@@ -6,6 +6,7 @@
 -- * override the configuration of LazyVim plugins
 return {
   { "loctvl842/monokai-pro.nvim" },
+  { "olimorris/onedarkpro.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
