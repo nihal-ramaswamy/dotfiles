@@ -18,14 +18,6 @@ return {
     end,
   },
   {
-    "andreadev-it/shade.nvim",
-    config = function()
-      require("shade").setup({
-        exclude_filetypes = { "NvimTree" },
-      })
-    end,
-  },
-  {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
     config = function()
