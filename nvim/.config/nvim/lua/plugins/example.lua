@@ -7,10 +7,13 @@
 return {
   { "loctvl842/monokai-pro.nvim" },
   { "olimorris/onedarkpro.nvim" },
+  { "rmehri01/onenord.nvim" },
+  { "olimorris/onedarkpro.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai-pro",
+      --   colorscheme = "monokai-pro",
+      colorscheme = "onedark_vivid",
     },
   },
 
