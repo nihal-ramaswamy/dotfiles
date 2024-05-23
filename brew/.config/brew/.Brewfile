@@ -14,6 +14,7 @@ brew "ripgrep"
 
 cask "appcleaner"
 cask "brave-browser"
+cask "citrix-workspace"
 cask "discord"
 cask "firefox-developer-edition"
 cask "font-monaspace"
