@@ -24,18 +24,11 @@ antidote load ${XDG_CONFIG_HOME}/antidote/plugins.conf
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
-# Rust 
-export CARGO_HOME="${XDG_DATA_HOME}"/cargo
-export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
-
 # Docker 
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}"/docker
 
 # Lessfile History 
 export LESSHISTFILE="${XDG_CACHE_HOME}"/less/history
-
-# PSQL
-export PSQL_HISTORY="${XDG_DATA_HOME}/psql_history"
 
 # ZSH 
 export HISTFILE="${XDG_STATE_HOME}"/zsh/history     
@@ -60,8 +53,6 @@ export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export PATH=$PATH:~/.local/bin/
 
 export LANG=en_US.UTF-8
-
-[ -f "/Users/itisnihal/.ghcup/env" ] && source "/Users/itisnihal/.ghcup/env" # ghcup-env
 
 # nvm
 export NVM_DIR="$HOME/.config/nvm"

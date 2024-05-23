@@ -11,8 +11,6 @@ brew "nvim"
 brew "node"
 brew "antidote"
 brew "ripgrep"
-brew "haskell-language-server"
-brew "ghc"
 
 cask "appcleaner"
 cask "brave-browser"
