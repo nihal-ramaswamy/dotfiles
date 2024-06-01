@@ -28,3 +28,5 @@
 	helper = store
 [pull]
 	rebase = true
+[merge]
+	tool = nvimdiff3
