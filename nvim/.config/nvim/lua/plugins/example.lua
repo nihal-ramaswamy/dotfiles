@@ -5,13 +5,11 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-  { "shaunsingh/nord.nvim" },
-  { "cranberry-clockworks/coal.nvim" },
+  { "phha/zenburn.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "coal",
-      -- colorscheme = "onenord",
+      colorscheme = "zenburn",
     },
   },
 
