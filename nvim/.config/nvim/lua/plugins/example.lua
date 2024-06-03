@@ -5,15 +5,12 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-  { "loctvl842/monokai-pro.nvim" },
-  { "olimorris/onedarkpro.nvim" },
-  { "rmehri01/onenord.nvim" },
-  { "olimorris/onedarkpro.nvim" },
-  { "yorickpeterse/nvim-grey.nvim" },
+  { "shaunsingh/nord.nvim" },
+  { "cranberry-clockworks/coal.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai-pro",
+      colorscheme = "coal",
       -- colorscheme = "onenord",
     },
   },
