@@ -9,11 +9,12 @@ return {
   { "olimorris/onedarkpro.nvim" },
   { "rmehri01/onenord.nvim" },
   { "olimorris/onedarkpro.nvim" },
+  { "yorickpeterse/nvim-grey.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      --   colorscheme = "monokai-pro",
-      colorscheme = "onenord",
+      colorscheme = "monokai-pro",
+      -- colorscheme = "onenord",
     },
   },
 
