@@ -4,6 +4,7 @@ gpip() {
 }
 
 export EDITOR="vim"
+export TERM=screen-256color
 setopt HIST_IGNORE_SPACE
 setopt sharehistory
 

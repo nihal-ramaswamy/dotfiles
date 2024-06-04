@@ -11,6 +11,8 @@ brew "tmux"
 brew "nvim"
 brew "antidote"
 brew "ripgrep"
+brew "delve"
+brew "gnu-sed"
 
 cask "appcleaner"
 cask "brave-browser"
