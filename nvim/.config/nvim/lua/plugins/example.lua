@@ -6,10 +6,11 @@
 -- * override the configuration of LazyVim plugins
 return {
   { "phha/zenburn.nvim" },
+  { "loctvl842/monokai-pro.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "dracula",
+      colorscheme = "monokai-pro-classic",
     },
   },
 

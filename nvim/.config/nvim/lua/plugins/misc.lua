@@ -2,7 +2,6 @@ return {
   {
     "nyoom-engineering/oxocarbon.nvim",
   },
-  { "Mofiqul/dracula.nvim" },
   {
     "folke/todo-comments.nvim",
     lazy = false,
