@@ -50,8 +50,8 @@ export GEM_SPEC_CACHE="${XDG_CACHE_HOME}"/gem
 # ZSH 
 export HISTFILE="$XDG_STATE_HOME"/zsh/history 
 
-
-export PATH=$PATH:~/.local/bin/
+export GO_PATH=~/go
+export PATH=$PATH:/$GO_PATH/bin:~/.local/bin
 
 export LANG=en_US.UTF-8
 

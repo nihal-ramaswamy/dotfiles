@@ -7,10 +7,11 @@
 return {
   { "phha/zenburn.nvim" },
   { "loctvl842/monokai-pro.nvim" },
+  { "fcancelinha/northern.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai-pro-classic",
+      colorscheme = "northern",
     },
   },
 
@@ -86,6 +87,10 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
+        clangd = {
+          filetypes = { "c", "cpp", "cc", "cuda", "objc", "objcpp" },
+        },
+        bufls = {},
       },
     },
   },

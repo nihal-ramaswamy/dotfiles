@@ -4,4 +4,5 @@
 
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "80"
+vim.opt.cursorlineopt = "number"
 vim.opt.swapfile = false
