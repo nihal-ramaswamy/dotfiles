@@ -7,7 +7,13 @@
 return {
   { "phha/zenburn.nvim" },
   { "loctvl842/monokai-pro.nvim" },
-  { "fcancelinha/northern.nvim" },
+  {
+    "fcancelinha/northern.nvim",
+    config = function()
+      local colors = require("northern.colors")
+      vim.api.nvim_set_hl(0, "LspInlayHint", { fg = colors.frost.sea, underline = true })
+    end,
+  },
   {
     "LazyVim/LazyVim",
     opts = {
