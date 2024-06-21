@@ -6,7 +6,9 @@
 -- * override the configuration of LazyVim plugins
 return {
   { "phha/zenburn.nvim" },
+  { "olimorris/onedarkpro.nvim" },
   { "loctvl842/monokai-pro.nvim" },
+  { "olivercederborg/poimandres.nvim" },
   {
     "fcancelinha/northern.nvim",
     config = function()
@@ -17,7 +19,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "northern",
+      colorscheme = "poimandres",
     },
   },
 
