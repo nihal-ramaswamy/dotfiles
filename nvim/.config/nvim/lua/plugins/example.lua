@@ -8,7 +8,19 @@ return {
   { "phha/zenburn.nvim" },
   { "olimorris/onedarkpro.nvim" },
   { "loctvl842/monokai-pro.nvim" },
-  { "olivercederborg/poimandres.nvim" },
+  {
+    "olivercederborg/poimandres.nvim",
+    config = function()
+      local p = require("poimandres.palette")
+      require("poimandres").setup({
+        highlight_groups = {
+          LspReferenceText = { bg = p.background1 },
+          LspReferenceRead = { bg = p.background1 },
+          LspReferenceWrite = { bg = p.background1 },
+        },
+      })
+    end,
+  },
   {
     "fcancelinha/northern.nvim",
     config = function()
