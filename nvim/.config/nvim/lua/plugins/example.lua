@@ -5,33 +5,12 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-  { "phha/zenburn.nvim" },
   { "olimorris/onedarkpro.nvim" },
   { "loctvl842/monokai-pro.nvim" },
   {
-    "olivercederborg/poimandres.nvim",
-    config = function()
-      local p = require("poimandres.palette")
-      require("poimandres").setup({
-        highlight_groups = {
-          LspReferenceText = { bg = p.background1 },
-          LspReferenceRead = { bg = p.background1 },
-          LspReferenceWrite = { bg = p.background1 },
-        },
-      })
-    end,
-  },
-  {
-    "fcancelinha/northern.nvim",
-    config = function()
-      local colors = require("northern.colors")
-      vim.api.nvim_set_hl(0, "LspInlayHint", { fg = colors.frost.sea, underline = true })
-    end,
-  },
-  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "poimandres",
+      colorscheme = "onedark_vivid",
     },
   },
 
@@ -43,7 +22,7 @@ return {
   },
 
   -- disable trouble
-  { "folke/trouble.nvim", enabled = false },
+  { "folke/trouble.nvim", enabled = true },
 
   -- add symbols-outline
   {
