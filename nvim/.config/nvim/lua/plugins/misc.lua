@@ -38,4 +38,8 @@ return {
     "mbbill/undotree",
     cmd = "UndotreeToggle",
   },
+  {
+    "christoomey/vim-tmux-navigator",
+    event = "VimEnter",
+  },
 }

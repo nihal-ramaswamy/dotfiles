@@ -30,3 +30,5 @@
 	rebase = true
 [merge]
 	tool = nvimdiff3
+[http]
+	cookiefile = ~/.gitcookies
