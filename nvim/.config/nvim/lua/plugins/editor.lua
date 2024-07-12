@@ -1,4 +1,13 @@
 return {
+  { "olimorris/onedarkpro.nvim" },
+  { "loctvl842/monokai-pro.nvim" },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "monokai-pro",
+    },
+  },
+
   {
     "folke/todo-comments.nvim",
     lazy = false,
@@ -17,6 +26,7 @@ return {
   {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
+    keys = { { "<leader>fz", "<cmd>ZenMode<cr>", desc = "Toggle Zenmode" } },
     config = function()
       require("zen-mode").setup({
         window = {
@@ -38,6 +48,13 @@ return {
     "mbbill/undotree",
     cmd = "UndotreeToggle",
   },
+  {
+    "hedyhli/outline.nvim",
+    cmd = "Outline",
+    keys = { { "<leader>cs", "<cmd>Outline<cr>", desc = "Symbols Outline" } },
+    config = true,
+  },
+
   {
     "christoomey/vim-tmux-navigator",
     event = "VimEnter",
