@@ -33,13 +33,16 @@ nnoremap <leader><space> :noh<CR>
 
 call plug#begin()
   Plug 'itchyny/lightline.vim'
+  Plug 'tpope/vim-fugitive'
+  Plug 'nordtheme/vim'
 call plug#end()
 
 set background=dark t_Co=256
 if &term =~ '256color' | set t_ut= | endif
 
+colorscheme nord
 let g:lightline = {
-    \ 'colorscheme': 'onedark',
+    \ 'colorscheme': 'nord',
     \ }
 
 " Set viminfo to not come in home folder
