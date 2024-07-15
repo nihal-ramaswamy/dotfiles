@@ -8,3 +8,4 @@ tmux/.config/tmux/plugins
 credentials
 vim/.vim/autoload
 vim/.vim/plugged
+**/plugins.zsh

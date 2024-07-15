@@ -13,6 +13,8 @@ brew "antidote"
 brew "ripgrep"
 brew "delve"
 brew "gnu-sed"
+brew "fzf"
+brew "zoxide"
 
 cask "appcleaner"
 cask "citrix-workspace"
