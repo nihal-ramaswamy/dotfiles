@@ -58,7 +58,7 @@ eval "$(starship init zsh)"
 
 # Shell Integrations 
 if [[ `uname` == "Darwin" ]]; then
-	eval "$(fzf)"
+	eval "$(fzf --zsh)"
 fi
 eval "$(zoxide init --cmd cd zsh)"
 
