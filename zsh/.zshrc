@@ -1,3 +1,7 @@
+export LANGUAGE=en_IN.UTF-8
+export LANG=en_IN.UTF-8
+export LC_ALL=en_IN.UTF-8
+
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -16,7 +20,11 @@ export XDG_CACHE_HOME="${XDG_CACHE_HOME:=${HOME}/.cache}"
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:=/run/user/${UID}}"
 
 # Antidote
-source /usr/local/opt/antidote/share/antidote/antidote.zsh
+if [[ `uname` == "Darwin" ]]; then
+	source /usr/local/opt/antidote/share/antidote/antidote.zsh
+elif command -v apt > /dev/null; then 
+	source ~/.local/share/.antidote/antidote.zsh
+fi
 export ANTIDOTE_HOME=${XDG_CACHE_HOME}/antidote
 antidote load ${XDG_CONFIG_HOME}/antidote/plugins.conf
 
@@ -45,11 +53,13 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --colors $realpath'
 
 # Starship 
-eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+eval "$(starship init zsh)"
 
 # Shell Integrations 
-eval "$(fzf --zsh)"
+if [[ `uname` == "Darwin" ]]; then
+	eval "$(fzf)"
+fi
 eval "$(zoxide init --cmd cd zsh)"
 
 #---------------------Python-------------------------------
@@ -77,13 +87,12 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export GEM_HOME="${XDG_DATA_HOME}"/gem
 export GEM_SPEC_CACHE="${XDG_CACHE_HOME}"/gem
 
-
 #GO
 export GO_PATH=~/go
 export PATH=$PATH:/$GO_PATH/bin:~/.local/bin
-
 
 # nvm
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
