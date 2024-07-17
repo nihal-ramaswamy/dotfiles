@@ -29,6 +29,7 @@ export ANTIDOTE_HOME=${XDG_CACHE_HOME}/antidote
 antidote load ${XDG_CONFIG_HOME}/antidote/plugins.conf
 
 autoload -U compinit && compinit
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
 # Lessfile History 
 export LESSHISTFILE="${XDG_CACHE_HOME}"/less/history
