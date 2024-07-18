@@ -18,7 +18,7 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 
 # Dotfile manager
 brew install stow
-stow -vSt ~ brew git kitty starship tmux vim zsh antidote
+stow -vSt ~ brew git kitty tmux vim zsh antidote
 
 brew bundle --file $HOME/.config/brew/.Brewfile
 

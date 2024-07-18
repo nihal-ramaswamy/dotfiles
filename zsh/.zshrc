@@ -29,7 +29,10 @@ export ANTIDOTE_HOME=${XDG_CACHE_HOME}/antidote
 antidote load ${XDG_CONFIG_HOME}/antidote/plugins.conf
 
 autoload -U compinit && compinit
+autoload -U promptinit; promptinit
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+prompt pure
+
 
 # Lessfile History 
 export LESSHISTFILE="${XDG_CACHE_HOME}"/less/history
@@ -52,10 +55,6 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no 
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
-# Starship 
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-eval "$(starship init zsh)"
 
 # Shell Integrations 
 if [[ `uname` == "Darwin" ]]; then
