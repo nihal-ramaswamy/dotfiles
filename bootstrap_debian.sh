@@ -20,4 +20,4 @@ curl -sS https://starship.rs/install.sh | sh
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${XDG_DATA_HOME}/.antidote
 
 # Dotfile manager
-stow -vSt ~ git starship tmux vim zsh antidote nvim
+stow -vSt ~ git starship tmux vim zsh antidote
