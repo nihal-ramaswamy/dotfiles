@@ -26,7 +26,7 @@ antidote load ${XDG_CONFIG_HOME}/antidote/plugins.conf
 
 autoload -U compinit && compinit
 autoload -U promptinit; promptinit
-compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+export ZSH_COMPDUMP=$XDG_CACHE_HOME/.zcompdump-$HOST
 prompt pure
 
 export PURE_PROMPT_SYMBOL=">"
