@@ -1,12 +1,8 @@
-export LANGUAGE=en_IN.UTF-8
-export LANG=en_IN.UTF-8
-export LC_ALL=en_IN.UTF-8
+export LANG=en_US.UTF-8
 
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
-
-export LANG=en_US.UTF-8
 
 export EDITOR="vim"
 export TERM=screen-256color
@@ -32,6 +28,12 @@ autoload -U compinit && compinit
 autoload -U promptinit; promptinit
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 prompt pure
+
+export PURE_PROMPT_SYMBOL=">"
+export PURE_PROMPT_VICMD_SYMBOL="<"
+export PURE_GIT_DOWN_ARROW="p"
+export PURE_GIT_UP_ARROW="P"
+export PURE_GIT_STASH_SYMBOL="s"
 
 
 # Lessfile History 
