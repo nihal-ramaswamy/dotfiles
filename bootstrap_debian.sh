@@ -8,4 +8,4 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 xargs sudo apt-get -y install <apt_get/install.txt
 
 # Dotfile manager
-stow -vSt ~ git tmux vim bash
+stow -vSt ~ git tmux vim bash dircolors

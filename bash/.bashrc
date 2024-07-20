@@ -1,4 +1,11 @@
 HISTCONTROL=ignoreboth
+HISTFILESIZE=1000000000
+HISTSIZE=1000000
+
+shopt -s histappend
+shopt -s no_empty_cmd_completion
+shopt -s cmdhist
+
 
 force_color_prompt=yes
 color_prompt=yes
@@ -21,6 +28,20 @@ alias ls="ls -lah --color"
 # - Colors ($RED, $GREEN) - defined in ../tilde/bash_profile.bash
 #
 
+# Colors
+RED="$(tput setaf 1)"
+GREEN="$(tput setaf 2)"
+YELLOW="$(tput setaf 3)"
+BLUE="$(tput setaf 4)"
+MAGENTA="$(tput setaf 5)"
+CYAN="$(tput setaf 6)"
+WHITE="$(tput setaf 7)"
+GRAY="$(tput setaf 8)"
+BOLD="$(tput bold)"
+UNDERLINE="$(tput sgr 0 1)"
+INVERT="$(tput sgr 1 0)"
+NOCOLOR="$(tput sgr0)"
+
 # User color
 case $(id -u) in
 0) user_color="$RED" ;; # root
@@ -28,10 +49,10 @@ case $(id -u) in
 esac
 
 # Symbols
-prompt_symbol="❯"
-prompt_clean_symbol="☀ "
-prompt_dirty_symbol="☂ "
-prompt_venv_symbol="☁ "
+prompt_symbol="$"
+prompt_clean_symbol="* "
+prompt_dirty_symbol="! "
+prompt_venv_symbol="venv "
 
 function prompt_command() {
   # Local or SSH session?
@@ -97,3 +118,5 @@ function prompt_command() {
 
 # Show awesome prompt only if Git is istalled
 command -v git >/dev/null 2>&1 && PROMPT_COMMAND=prompt_command
+
+test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
