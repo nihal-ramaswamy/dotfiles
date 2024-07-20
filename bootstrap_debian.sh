@@ -5,15 +5,7 @@ curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubuserconte
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Apt-Get
-xargs sudo apt-get -y install < apt_get/install.txt
-
-sudo locale-gen en_IN
-
-# Change shell
-chsh -s $(which zsh)
-
-# Antidote
-git clone --depth=1 https://github.com/mattmc3/antidote.git ${XDG_DATA_HOME}/.antidote
+xargs sudo apt-get -y install <apt_get/install.txt
 
 # Dotfile manager
-stow -vSt ~ git tmux vim zsh antidote
+stow -vSt ~ git tmux vim bash

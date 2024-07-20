@@ -1,8 +1,8 @@
-export LANG=en_US.UTF-8
-
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+
+export LANG=en_US.UTF-8
 
 export EDITOR="vim"
 export TERM=screen-256color
@@ -16,11 +16,7 @@ export XDG_CACHE_HOME="${XDG_CACHE_HOME:=${HOME}/.cache}"
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:=/run/user/${UID}}"
 
 # Antidote
-if [[ `uname` == "Darwin" ]]; then
-	source /usr/local/opt/antidote/share/antidote/antidote.zsh
-elif command -v apt > /dev/null; then 
-	source ~/.local/share/.antidote/antidote.zsh
-fi
+source /usr/local/opt/antidote/share/antidote/antidote.zsh
 export ANTIDOTE_HOME=${XDG_CACHE_HOME}/antidote
 antidote load ${XDG_CONFIG_HOME}/antidote/plugins.conf
 
@@ -28,13 +24,6 @@ autoload -U compinit && compinit
 autoload -U promptinit; promptinit
 export ZSH_COMPDUMP=$XDG_CACHE_HOME/.zcompdump-$HOST
 prompt pure
-
-export PURE_PROMPT_SYMBOL=">"
-export PURE_PROMPT_VICMD_SYMBOL="<"
-export PURE_GIT_DOWN_ARROW="p"
-export PURE_GIT_UP_ARROW="P"
-export PURE_GIT_STASH_SYMBOL="s"
-
 
 # Lessfile History 
 export LESSHISTFILE="${XDG_CACHE_HOME}"/less/history
@@ -56,12 +45,10 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no 
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --colors $realpath'
 
 # Shell Integrations 
-if [[ `uname` == "Darwin" ]]; then
-	eval "$(fzf --zsh)"
-fi
+eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 #---------------------Python-------------------------------
@@ -79,16 +66,6 @@ export DOCKER_CONFIG="${XDG_CONFIG_HOME}"/docker
 # NPM
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}"/npm/npmrc
 
-# Elixir
-export MIX_XDG=true
-
-# Docker 
-export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
-
-#Ruby 
-export GEM_HOME="${XDG_DATA_HOME}"/gem
-export GEM_SPEC_CACHE="${XDG_CACHE_HOME}"/gem
-
 #GO
 export GO_PATH=~/go
 export PATH=$PATH:/$GO_PATH/bin:~/.local/bin
@@ -97,4 +74,3 @@ export PATH=$PATH:/$GO_PATH/bin:~/.local/bin
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-

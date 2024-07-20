@@ -1,8 +1,4 @@
-zsh
 neofetch
 htop
 stow
-ripgrep
-fzf
-zoxide
 tmux
