@@ -17,13 +17,6 @@ return {
     end,
   },
   {
-    "karb94/neoscroll.nvim",
-    keys = { "<C-j>", "<C-k>" },
-    config = function()
-      require("neoscroll").setup()
-    end,
-  },
-  {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
     keys = { { "<leader>fz", "<cmd>ZenMode<cr>", desc = "Toggle Zenmode" } },
