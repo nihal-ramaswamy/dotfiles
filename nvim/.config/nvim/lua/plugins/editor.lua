@@ -4,10 +4,26 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai-pro",
+      colorscheme = "northern",
     },
   },
-
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    config = function()
+      require("neo-tree").setup({
+        window = {
+          position = "right",
+        },
+      })
+    end,
+  },
+  {
+    "fcancelinha/northern.nvim",
+    config = function()
+      local colors = require("northern.colors")
+      vim.api.nvim_set_hl(0, "LspInlayHint", { fg = colors.frost.sea, underline = true })
+    end,
+  },
   {
     "folke/todo-comments.nvim",
     lazy = false,
