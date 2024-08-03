@@ -3,6 +3,6 @@
 -- Add any additional options here
 
 vim.opt.cursorline = true
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
 vim.opt.cursorlineopt = "number"
 vim.opt.swapfile = false
