@@ -21,14 +21,6 @@ return {
     end,
   },
   {
-    "folke/todo-comments.nvim",
-    lazy = false,
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("todo-comments").setup()
-    end,
-  },
-  {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
     keys = { { "<leader>fz", "<cmd>ZenMode<cr>", desc = "Toggle Zenmode" } },
