@@ -5,9 +5,16 @@ dynamic_padding = false
 opacity = 0.9
 startup_mode = "Fullscreen"
 
+[scrolling]
+history = 1000
+multiplier = 3
+
 [window.padding]
-x = 25
-y = 20
+x = 16
+y = 9
+
+[font]
+size = 12
 
 [font.bold]
 family = "Hack Nerd Font Mono"
