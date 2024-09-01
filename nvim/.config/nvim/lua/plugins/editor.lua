@@ -1,10 +1,12 @@
 return {
   { "nordtheme/vim" },
   { "loctvl842/monokai-pro.nvim" },
+  { "maxmx03/dracula.nvim", lazy = false, priority = 1000 },
+
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nord",
+      colorscheme = "dracula",
     },
   },
   {
