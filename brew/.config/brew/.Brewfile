@@ -16,6 +16,8 @@ brew "go"
 brew "node"
 brew "lazygit"
 brew "atac"
+brew "jdtls"
+brew "openjdk"
 
 cask "appcleaner"
 cask "citrix-workspace"
