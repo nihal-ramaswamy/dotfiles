@@ -199,4 +199,9 @@ map <leader>gb <Action>(Git.Branches)
 map <leader>en <Action>(ReSharperGotoNextErrorInSolution)
 map <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
 
-
+" Press `f` to activate AceJump
+map f <Action>(AceAction)
+" Press `F` to activate Target Mode
+map F <Action>(AceTargetAction)
+" Press `g` to activate Line Mode
+map g <Action>(AceLineAction)
