@@ -15,9 +15,6 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:=${HOME}/.local/state}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:=${HOME}/.cache}"
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:=$PREFIX/tmp}"
 
-chmod 777 ${XDG_RUNTIME_DIR}
-
-
 # Antidote
 source /usr/local/opt/antidote/share/antidote/antidote.zsh
 export ANTIDOTE_HOME=${XDG_CACHE_HOME}/antidote

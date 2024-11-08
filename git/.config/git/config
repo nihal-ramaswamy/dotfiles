@@ -22,6 +22,7 @@
   untracked = cyan
 [core]
   editor = vim
+	autocrlf = input
 [advice]
   detachedHead = false
 [credential]
