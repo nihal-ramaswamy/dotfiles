@@ -8,4 +8,4 @@ vim.opt.cursorlineopt = "number"
 vim.opt.swapfile = false
 
 vim.opt.termguicolors = true
--- vim.o.background = "light"
+vim.o.background = "light"

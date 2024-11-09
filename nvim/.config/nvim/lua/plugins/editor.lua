@@ -1,10 +1,11 @@
 return {
   { "nordtheme/vim" },
   { "loctvl842/monokai-pro.nvim" },
+  { "ishan9299/nvim-solarized-lua" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nord",
+      colorscheme = "solarized",
     },
   },
   {
