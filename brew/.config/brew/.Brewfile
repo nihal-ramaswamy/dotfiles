@@ -1,6 +1,4 @@
 tap "homebrew/bundle"
-tap "julien-cpsn/atac"
-tap "sdkman/tap"
 
 brew "starship"
 brew "docker"
@@ -16,9 +14,7 @@ brew "zoxide"
 brew "go"
 brew "node"
 brew "lazygit"
-brew "atac"
 brew "jdtls"
-brew "sdkman-cli"
 
 cask "appcleaner"
 cask "citrix-workspace"

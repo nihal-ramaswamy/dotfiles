@@ -3,8 +3,8 @@
 
 #	Additional commands if using Mac with M1 Chip
 if [[ $(uname -m) == 'arm64' ]]; then
-	echo 'eval $(/opt/homebrew/bin/brew shellenv)' >>~/.zprofile
-	eval $(/opt/homebrew/bin/brew shellenv)
+  echo 'eval $(/opt/homebrew/bin/brew shellenv)' >>~/.zprofile
+  eval $(/opt/homebrew/bin/brew shellenv)
 fi
 
 # Vimplug
@@ -22,5 +22,10 @@ stow -vSt ~ brew git kitty tmux vim zsh antidote
 
 brew bundle --file $HOME/.config/brew/.Brewfile
 
+source ~/.zshrc
+
 # Antidote
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${XDG_DATA_HOME}/.antidote
+
+# sdkman
+curl -s "https://get.sdkman.io" | bash
