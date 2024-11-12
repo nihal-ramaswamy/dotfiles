@@ -16,7 +16,6 @@ brew "node"
 brew "lazygit"
 brew "jdtls"
 
-cask "appcleaner"
 cask "citrix-workspace"
 cask "font-hack-nerd-font"
 cask "kitty"
