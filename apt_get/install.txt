@@ -1,6 +1,0 @@
-neofetch
-htop
-stow
-tmux
-vim
-
