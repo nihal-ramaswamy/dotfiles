@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 
 brew "starship"
+brew "httpie"
 brew "docker"
 brew "stow"
 brew "tmux"
