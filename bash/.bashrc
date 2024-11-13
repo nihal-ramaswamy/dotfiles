@@ -17,106 +17,148 @@ export SVN_EDITOR="vim"
 
 alias ls="ls -lah --color"
 
+# pure prompt on bash
 #
-# Clean and minimalistic Bash prompt
-# Author: Artem Sapegin, sapegin.me
+# Pretty, minimal BASH prompt, inspired by sindresorhus/pure(https://github.com/sindresorhus/pure)
 #
-# Inspired by: https://github.com/sindresorhus/pure & https://github.com/dreadatour/dotfiles/blob/master/.bash_profile
-#
-# Notes:
-# - $local_username - username you don’t want to see in the prompt - can be defined in ~/.bashlocal : `local_username="admin"`
-# - Colors ($RED, $GREEN) - defined in ../tilde/bash_profile.bash
-#
+# Author: Hiroshi Krashiki(Krashikiworks)
+# released under MIT License, see LICENSE
 
 # Colors
-RED="$(tput setaf 1)"
-GREEN="$(tput setaf 2)"
-YELLOW="$(tput setaf 3)"
-BLUE="$(tput setaf 4)"
-MAGENTA="$(tput setaf 5)"
-CYAN="$(tput setaf 6)"
-WHITE="$(tput setaf 7)"
-GRAY="$(tput setaf 8)"
-BOLD="$(tput bold)"
-UNDERLINE="$(tput sgr 0 1)"
-INVERT="$(tput sgr 1 0)"
-NOCOLOR="$(tput sgr0)"
+readonly BLACK=$(tput setaf 0)
+readonly RED=$(tput setaf 1)
+readonly GREEN=$(tput setaf 2)
+readonly YELLOW=$(tput setaf 3)
+readonly BLUE=$(tput setaf 4)
+readonly MAGENTA=$(tput setaf 5)
+readonly CYAN=$(tput setaf 6)
+readonly WHITE=$(tput setaf 7)
+readonly BRIGHT_BLACK=$(tput setaf 8)
+readonly BRIGHT_RED=$(tput setaf 9)
+readonly BRIGHT_GREEN=$(tput setaf 10)
+readonly BRIGHT_YELLOW=$(tput setaf 11)
+readonly BRIGHT_BLUE=$(tput setaf 12)
+readonly BRIGHT_MAGENTA=$(tput setaf 13)
+readonly BRIGHT_CYAN=$(tput setaf 14)
+readonly BRIGHT_WHITE=$(tput setaf 15)
 
-# User color
-case $(id -u) in
-0) user_color="$RED" ;; # root
-*) user_color="$GREEN" ;;
-esac
+readonly RESET=$(tput sgr0)
 
-# Symbols
-prompt_symbol="$"
-prompt_clean_symbol="* "
-prompt_dirty_symbol="! "
-prompt_venv_symbol="venv "
+# symbols
+pure_prompt_symbol="❯"
+pure_symbol_unpulled="⇣"
+pure_symbol_unpushed="⇡"
+pure_symbol_dirty="*"
+# pure_git_stash_symbol="≡"
 
-function prompt_command() {
-  # Local or SSH session?
-  local remote=
-  [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && remote=1
+# if this value is true, remote status update will be async
+pure_git_async_update=false
+pure_git_raw_remote_status="+0 -0"
 
-  # Git branch name and work tree status (only when we are inside Git working tree)
-  local git_prompt=
-  if [[ "true" = "$(git rev-parse --is-inside-work-tree 2>/dev/null)" ]]; then
-    # Branch name
-    local branch="$(git symbolic-ref HEAD 2>/dev/null)"
-    branch="${branch##refs/heads/}"
 
-    # Working tree status (red when dirty)
-    local dirty=
-    # Modified files
-    git diff --no-ext-diff --quiet --exit-code --ignore-submodules 2>/dev/null || dirty=1
-    # Untracked files
-    [ -z "$dirty" ] && test -n "$(git status --porcelain)" && dirty=1
+__pure_echo_git_remote_status() {
 
-    # Format Git info
-    if [ -n "$dirty" ]; then
-      git_prompt=" $RED$prompt_dirty_symbol$branch$NOCOLOR"
-    else
-      git_prompt=" $GREEN$prompt_clean_symbol$branch$NOCOLOR"
-    fi
-  fi
+	# get unpulled & unpushed status
+	if ${pure_git_async_update}; then
+		# do async
+		# FIXME: this async execution doesn't change pure_git_raw_remote_status. so remote status never changes in async mode
+		# FIXME: async mode takes as long as sync mode
+		pure_git_raw_remote_status=$(git status --porcelain=2 --branch | grep --only-matching --perl-regexp '\+\d+ \-\d+') &
+	else
+		# do sync
+		pure_git_raw_remote_status=$(git status --porcelain=2 --branch | grep --only-matching --perl-regexp '\+\d+ \-\d+')
+	fi
 
-  # Virtualenv
-  local venv_prompt=
-  if [ -n "$VIRTUAL_ENV" ]; then
-    venv_prompt=" $BLUE$prompt_venv_symbol$(basename $VIRTUAL_ENV)$NOCOLOR"
-  fi
+	# shape raw status and check unpulled commit
+	local readonly UNPULLED=$(echo ${pure_git_raw_remote_status} | grep --only-matching --perl-regexp '\-\d')
+	if [[ ${UNPULLED} != "-0" ]]; then
+		pure_git_unpulled=true
+	else
+		pure_git_unpulled=false
+	fi
 
-  # Only show username if not default
-  local user_prompt=
-  [ "$USER" != "$local_username" ] && user_prompt="$user_color$USER$NOCOLOR"
+	# unpushed commit too
+	local readonly UNPUSHED=$(echo ${pure_git_raw_remote_status} | grep --only-matching --perl-regexp '\+\d')
+	if [[ ${UNPUSHED} != "+0" ]]; then
+		pure_git_unpushed=true
+	else
+		pure_git_unpushed=false
+	fi
 
-  # Show hostname inside SSH session
-  local host_prompt=
-  [ -n "$remote" ] && host_prompt="@$YELLOW$HOSTNAME$NOCOLOR"
+	# if unpulled -> ⇣
+	# if unpushed -> ⇡
+	# if both (branched from remote) -> ⇣⇡
+	if ${pure_git_unpulled}; then
 
-  # Show delimiter if user or host visible
-  local login_delimiter=
-  [ -n "$user_prompt" ] || [ -n "$host_prompt" ] && login_delimiter=":"
+		if ${pure_git_unpushed}; then
+			echo "${RED}${pure_symbol_unpulled}${pure_symbol_unpushed}${RESET}"
+		else
+			echo "${BRIGHT_RED}${pure_symbol_unpulled}${RESET}"
+		fi
 
-  # Format prompt
-  first_line="$user_prompt$host_prompt$login_delimiter$WHITE\w$NOCOLOR$git_prompt$venv_prompt"
-  # Text (commands) inside \[...\] does not impact line length calculation which fixes stange bug when looking through the history
-  # $? is a status of last command, should be processed every time prompt prints
-  second_line="\`if [ \$? = 0 ]; then echo \[\$CYAN\]; else echo \[\$RED\]; fi\`\$prompt_symbol\[\$NOCOLOR\] "
-  PS1="\n$first_line\n$second_line"
-
-  # Multiline command
-  PS2="\[$CYAN\]$prompt_symbol\[$NOCOLOR\] "
-
-  # Terminal title
-  local title="$(basename "$PWD")"
-  [ -n "$remote" ] && title="$title \xE2\x80\x94 $HOSTNAME"
-  echo -ne "\033]0;$title"
-  echo -ne "\007"
+	elif ${pure_git_unpushed}; then
+		echo "${BRIGHT_BLUE}${pure_symbol_unpushed}${RESET}"
+	fi
 }
 
-# Show awesome prompt only if Git is istalled
-command -v git >/dev/null 2>&1 && PROMPT_COMMAND=prompt_command
+__pure_update_git_status() {
 
-test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
+	local git_status=""
+
+		# if current directory isn't git repository, skip this
+		if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == "true" ]]; then
+
+			git_status="$(git branch --show-current)"
+
+			# check clean/dirty
+			git_status="${git_status}$(git diff --quiet || echo "${pure_symbol_dirty}")"
+
+			# coloring
+			git_status="${BRIGHT_BLACK}${git_status}${RESET}"
+
+			# if repository have no remote, skip this
+			if [[ -n $(git remote show) ]]; then
+				git_status="${git_status} $(__pure_echo_git_remote_status)"
+			fi
+		fi
+
+	pure_git_status=${git_status}
+}
+
+# if last command failed, change prompt color
+__pure_echo_prompt_color() {
+
+	if [[ $? = 0 ]]; then
+		echo ${pure_user_color}
+	else
+		echo ${RED}
+	fi
+
+}
+
+__pure_update_prompt_color() {
+	pure_prompt_color=$(__pure_echo_prompt_color)
+}
+
+# if user is root, prompt is BRIGHT_YELLOW
+case ${UID} in
+	0) pure_user_color=${BRIGHT_YELLOW} ;;
+	*) pure_user_color=${BRIGHT_MAGENTA} ;;
+esac
+
+# if git isn't installed when shell launches, git integration isn't activated
+if [[ -n $(command -v git) ]]; then
+	PROMPT_COMMAND="__pure_update_git_status; ${PROMPT_COMMAND}"
+fi
+
+PROMPT_COMMAND="__pure_update_prompt_color; ${PROMPT_COMMAND}"
+
+
+readonly FIRST_LINE="${CYAN}\w \${pure_git_status}\n"
+# raw using of $ANY_COLOR (or $(tput setaf ***)) here causes a creepy bug when go back history with up arrow key
+# I couldn't find why it occurs
+readonly SECOND_LINE="\[\${pure_prompt_color}\]${pure_prompt_symbol}\[$RESET\] "
+PS1="\n${FIRST_LINE}${SECOND_LINE}"
+
+# Multiline command
+PS2="\[$BLUE\]${prompt_symbol}\[$RESET\] "

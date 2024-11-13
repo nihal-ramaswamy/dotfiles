@@ -10,15 +10,10 @@ fi
 # Vimplug
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Tmux tpm
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# LazyVim
-git clone https://github.com/LazyVim/starter ~/.config/nvim
 
 # Dotfile manager
 brew install stow
-stow -vSt ~ brew git kitty tmux vim zsh antidote
+stow -vSt ~ brew git vim zsh antidote
 
 brew bundle --file $HOME/.config/brew/.Brewfile
 
