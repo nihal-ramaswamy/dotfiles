@@ -34,16 +34,10 @@ nnoremap <leader><space> :noh<CR>
 call plug#begin()
   Plug 'itchyny/lightline.vim'
   Plug 'tpope/vim-fugitive'
-  Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 set background=dark t_Co=256
 if &term =~ '256color' | set t_ut= | endif
-
-colorscheme solarized
-let g:lightline = {
-    \ 'colorscheme': 'solarized',
-    \ }
 
 " Set viminfo to not come in home folder
 set directory=$XDG_CACHE_HOME/vim/swap,~/,/tmp
