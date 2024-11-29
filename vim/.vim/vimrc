@@ -1,4 +1,4 @@
-syntax on               
+syntax on
 filetype on             
 filetype indent on     
 
@@ -23,6 +23,11 @@ set smartcase
 set visualbell t_vb=    
 set novisualbell       
 
+set clipboard^=unnamed,unnamedplus
+
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+"set list
+
 set backspace=indent,eol,start  
 set t_RV=     
 
@@ -30,6 +35,8 @@ set t_RV=
 let mapleader = " "
 " Clear highlight after search
 nnoremap <leader><space> :noh<CR>
+" Toggle list
+nnoremap <leader>l :set list!<CR>
 
 call plug#begin()
   Plug 'itchyny/lightline.vim'

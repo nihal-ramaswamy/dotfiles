@@ -1,13 +1,11 @@
 bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
 
 export LANG=en_US.UTF-8
 
 export EDITOR="vim"
 export TERM=screen-256color
 
-alias ls="ls -a --color"
+alias bls="ls -a --color -ltrh"
 
 export XDG_DATA_HOME="${XDG_DATA_HOME:=${HOME}/.local/share}"
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=${HOME}/.config}"
@@ -66,16 +64,15 @@ export DOCKER_CONFIG="${XDG_CONFIG_HOME}"/docker
 # NPM
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}"/npm/npmrc
 
-#GO
+# GO
 export GO_PATH=~/go
 export PATH=$PATH:/$GO_PATH/bin:~/.local/bin
 
-# nvm
-export NVM_DIR="$HOME/.config/nvm"
+# NVM
+export NVM_DIR="$XDG_CONFIG_HOME/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# SDKMAN
+export SDKMAN_DIR="$XDG_DATA_HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
