@@ -43,6 +43,7 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'
 call plug#end()
 
+colorscheme habamax
 set background=dark t_Co=256
 if &term =~ '256color' | set t_ut= | endif
 
