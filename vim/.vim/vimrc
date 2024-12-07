@@ -42,6 +42,7 @@ call plug#begin()
   Plug 'itchyny/lightline.vim'
   Plug 'tpope/vim-fugitive'
   Plug 'christoomey/vim-tmux-navigator'
+  Plug 'tomtom/tcomment_vim'
 call plug#end()
 
 colorscheme habamax
