@@ -1,0 +1,5 @@
+theme = dark:catppuccin-macchiato,light:catppuccin-latte
+background-opacity = 0.95
+clipboard-paste-protection = true
+bold-is-bright = true
+
