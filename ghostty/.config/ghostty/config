@@ -1,5 +1,7 @@
-theme = dark:catppuccin-macchiato,light:catppuccin-latte
+theme = vesper
 background-opacity = 0.95
 clipboard-paste-protection = true
 bold-is-bright = true
+window-padding-color = background
+font-feature = -liga
 
