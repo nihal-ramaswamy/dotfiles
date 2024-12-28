@@ -25,8 +25,8 @@ prompt pure
 
 # Lessfile History 
 export LESSHISTFILE="${XDG_CACHE_HOME}"/less/history
-# ZSH 
-export HISTFILE="$XDG_STATE_HOME"/zsh/history 
+# ZSH
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export HISTSIZE=5000
 export SAVEHIST="${HISTSIZE}"
 export HISTDUP=erase
@@ -38,14 +38,14 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups 
 setopt hist_find_no_dups
 
-# Completion style 
+# Completion style
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no 
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --colors $realpath'
 
-# Shell Integrations 
+# Shell Integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -65,7 +65,7 @@ export DOCKER_CONFIG="${XDG_CONFIG_HOME}"/docker
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}"/npm/npmrc
 
 # GO
-export GO_PATH=~/go
+export GO_PATH="${XDG_STATE_HOME}"/go
 export PATH=$PATH:/$GO_PATH/bin:~/.local/bin
 
 # NVM
@@ -78,5 +78,5 @@ export SDKMAN_DIR="$XDG_DATA_HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
 # Competitive Programming
-source ~/cp/cp.sh
+source "$XDG_CONFIG_HOME"/cp/cp.sh
 
