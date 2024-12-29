@@ -1,12 +1,30 @@
 return {
-  { 'loctvl842/monokai-pro.nvim' },
+  {
+    'loctvl842/monokai-pro.nvim',
+    priority = 1000,
+    -- init = function()
+    --   vim.cmd.colorscheme 'monokai-pro'
+    --   vim.cmd.hi 'Comment gui=none'
+    -- end,
+  },
+  {
+    'maxmx03/solarized.nvim',
+    lazy = false,
+    priority = 1000,
+    ---@type solarized.config
+    opts = {},
+    config = function(_, opts)
+      require('solarized').setup(opts)
+      vim.cmd.colorscheme 'solarized'
+    end,
+  },
   {
     'catppuccin/nvim',
     priority = 1000,
-    init = function()
-      vim.cmd.colorscheme 'catppuccin-mocha'
-      vim.cmd.hi 'Comment gui=none'
-    end,
+    -- init = function()
+    --   vim.cmd.colorscheme 'catppuccin-mocha'
+    --   vim.cmd.hi 'Comment gui=none'
+    -- end,
   },
 
   {
