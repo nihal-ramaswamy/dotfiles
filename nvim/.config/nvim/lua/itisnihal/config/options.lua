@@ -40,4 +40,4 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 5
 
 vim.opt.termguicolors = true
-vim.opt.background = 'light'
+vim.opt.background = 'dark'

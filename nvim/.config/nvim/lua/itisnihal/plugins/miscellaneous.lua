@@ -15,16 +15,16 @@ return {
     opts = {},
     config = function(_, opts)
       require('solarized').setup(opts)
-      vim.cmd.colorscheme 'solarized'
+      -- vim.cmd.colorscheme 'solarized'
     end,
   },
   {
     'catppuccin/nvim',
     priority = 1000,
-    -- init = function()
-    --   vim.cmd.colorscheme 'catppuccin-mocha'
-    --   vim.cmd.hi 'Comment gui=none'
-    -- end,
+    init = function()
+      vim.cmd.colorscheme 'catppuccin-mocha'
+      vim.cmd.hi 'Comment gui=none'
+    end,
   },
 
   {
