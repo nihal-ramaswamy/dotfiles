@@ -1,7 +1,6 @@
 tap "homebrew/bundle"
 
 brew "antidote"
-brew "elixir"
 brew "fzf"
 berw "ghostty"
 brew "gnu-sed"
@@ -17,8 +16,6 @@ brew "tmux"
 brew "zoxide"
 
 cask "affinity-designer"
-cask "arc"
-cask "blender"
 cask "citrix-workspace"
 cask "docker"
 cask "zed"

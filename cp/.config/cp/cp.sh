@@ -3,7 +3,7 @@ function cpt() {
 	for i in "$@";
 	do 
 		mkdir -p $i
-		cp ~/cp/template.cpp $i/$i.cpp;
+		cp ~/.config/cp/template.cpp $i/$i.cpp;
 	done
 }
 
