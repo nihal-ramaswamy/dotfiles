@@ -86,6 +86,20 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
     alt-r = 'mode resize'
 
+[workspace-to-monitor-force-assignment]
+    G = 'main'
+    M = 'main'
+    T = 'main'
+    P = 'main'
+    D = 'main'
+    1 = 'main'
+    2 = 'main'
+    C = ['secondary', 'main']
+    B = ['secondary', 'main']
+    U = ['secondary', 'main']
+    0 = ['secondary', 'main']
+    9 = ['secondary', 'main']
+
 [mode.resize.binding]
     h = 'resize width -50'
     j = 'resize height +50'
