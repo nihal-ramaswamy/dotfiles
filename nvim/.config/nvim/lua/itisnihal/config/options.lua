@@ -20,6 +20,8 @@ vim.opt.undofile = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
 vim.opt.signcolumn = 'yes'
 
@@ -48,3 +50,10 @@ vim.opt.tabstop = 4 -- A TAB character looks like 4 spaces
 vim.opt.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
 vim.opt.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
 vim.opt.shiftwidth = 4
+
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv 'HOME' .. '/.local/state/nvim/undodir'
+vim.opt.undofile = true
+
+vim.opt.colorcolumn = '80'

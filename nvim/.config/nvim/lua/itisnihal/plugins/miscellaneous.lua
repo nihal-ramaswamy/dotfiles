@@ -1,36 +1,43 @@
+function ColorMyPencils(color)
+  color = color or 'rose-pine-moon'
+  vim.cmd.hi 'Comment gui=none'
+
+  vim.cmd.colorscheme(color)
+  vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+end
+
 return {
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    config = function()
+      require('rose-pine').setup {
+        disable_background = true,
+        styles = {},
+      }
+
+      -- ColorMyPencils 'rose-pine-moon'
+    end,
+  },
   {
     'loctvl842/monokai-pro.nvim',
     priority = 1000,
-    -- init = function()
-    --   vim.cmd.colorscheme 'monokai-pro'
-    --   vim.cmd.hi 'Comment gui=none'
-    -- end,
-  },
-  {
-    'maxmx03/solarized.nvim',
-    lazy = false,
-    priority = 1000,
-    ---@type solarized.config
-    opts = {},
-    config = function(_, opts)
-      require('solarized').setup(opts)
-      -- vim.cmd.colorscheme 'solarized'
+    init = function()
+      -- ColorMyPencils('monokai-pro')
     end,
   },
   {
     'catppuccin/nvim',
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme 'catppuccin-mocha'
-      vim.cmd.hi 'Comment gui=none'
+      ColorMyPencils 'catppuccin-mocha'
     end,
   },
-
   {
     'folke/zen-mode.nvim',
     cmd = 'ZenMode',
-    keys = { { '<leader>fz', '<cmd>ZenMode<cr>', desc = 'Toggle Zenmode' } },
+    keys = { { '<leader>zm', '<cmd>ZenMode<cr>', desc = 'Toggle Zenmode' } },
     config = function()
       require('zen-mode').setup {
         window = {
