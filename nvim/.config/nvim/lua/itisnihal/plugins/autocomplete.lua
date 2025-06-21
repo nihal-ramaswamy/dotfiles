@@ -42,6 +42,9 @@ return {
       luasnip.config.setup {}
 
       cmp.setup {
+        sources = {
+          { name = 'supermaven' },
+        },
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
