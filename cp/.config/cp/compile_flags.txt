@@ -1,0 +1,12 @@
+-std=c++20
+-DDEBUG
+-Wall
+-Wshadow
+-Wextra
+-Wno-unused-result
+-Wfloat-equal
+-Wcast-qual
+-Wcast-align
+-g
+-fstack-protector
+-D_GLIBCXX_DEBUG

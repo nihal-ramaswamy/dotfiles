@@ -17,12 +17,20 @@
 #include <ranges>
 #include <set>
 #include <vector>
+
+#ifdef DEBUG
+#include "scripts/debugger.hpp"
+#define debug_out(...) cerr << "[" << #__VA_ARGS__ << "]:", pretty_print::debug(__VA_ARGS__)
+#else
+#define debug_out(...) 42;
+#endif
+
 using namespace std;
 using ll = long long;
- 
+
 void test_case([[maybe_unused]] int _tt) {
 }
- 
+
 int main() {
   cin.tie(0)->sync_with_stdio(0);
   cout << fixed << setprecision(15);
