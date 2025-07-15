@@ -15,9 +15,6 @@
     },
     "version": "2"
   },
-  "project_panel": {
-    "dock": "right"
-  },
   "diagnostics": {
     "inline": {
       "enabled": true
@@ -29,13 +26,12 @@
     }
   },
   "edit_predictions": {
-    "disabled_globs": [],
+    "disabled_globs": ["~/Desktop/cp/**"],
     "mode": "subtle",
     "copilot": {
       "proxy": null,
       "proxy_no_verify": null
-    },
-    "enabled_in_text_threads": false
+    }
   },
   "scrollbar": {
     "show": "auto"
@@ -56,7 +52,8 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Catppuccin Macchiato"
+    "dark": "Rosé Pine"
   },
-  "features": { "edit_prediction_provider": "supermaven" }
+  "features": { "edit_prediction_provider": "supermaven" },
+  "wrap_guides": [80]
 }
