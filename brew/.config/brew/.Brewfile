@@ -16,6 +16,7 @@ brew "zoxide"
 
 cask "citrix-workspace"
 cask "fantastical"
+cask "font-hack-nerd-font"
 cask "ghostty"
 cask "nikitabobko/tap/aerospace"
 cask "thebrowsercompany-dia"

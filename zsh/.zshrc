@@ -82,3 +82,8 @@ source "$XDG_CONFIG_HOME"/cp/cp.sh
 
 source "$XDG_CONFIG_HOME"/zsh/env.sh
 
+
+# Aerospace 
+ff()  {
+    aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
+}
