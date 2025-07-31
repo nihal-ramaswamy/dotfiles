@@ -163,7 +163,7 @@ alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
 alt-shift-0 = 'move-node-to-workspace 0 --focus-follows-window'
 
 
-alt-tab = 'workspace-back-and-forth'
+# alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/comm˳˳ands#mode
