@@ -80,7 +80,7 @@ export SDKMAN_DIR="$XDG_DATA_HOME/.sdkman"
 # Competitive Programming
 source "$XDG_CONFIG_HOME"/cp/cp.sh
 
-source "$XDG_CONFIG_HOME"/zsh/env.sh
+# source "$XDG_CONFIG_HOME"/zsh/env.sh
 
 
 # Aerospace 
