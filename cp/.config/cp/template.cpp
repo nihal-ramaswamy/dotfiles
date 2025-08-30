@@ -19,7 +19,7 @@
 #include <vector>
 
 #ifdef DEBUG
-#include "scripts/debugger.hpp"
+#include "../scripts/debugger.hpp"
 #define debug_out(...) cerr << "[" << #__VA_ARGS__ << "]:", pretty_print::debug(__VA_ARGS__)
 #else
 #define debug_out(...) 42;
