@@ -27,3 +27,16 @@ function stress() {
 		diff -w out1 out2 || break 
 	done
 }
+
+
+
+function stress_py() {
+	for ((i = 1; ; i++)); do 
+		fileName=$1
+		echo $i 
+		python3 stress.py > in1
+		./$fileName < in1 > out1 
+		python3 brute.py < in1 > out2 
+		diff -w out1 out2 || break 
+	done
+}
