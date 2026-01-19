@@ -29,3 +29,9 @@ sudo apt install git
 
 # Antidote 
 git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.local/share/.antidote
+
+# Hack Font
+curl -L -O https://raw.githubusercontent.com/source-foundry/hack-linux-installer/master/hack-linux-installer.sh
+chmod +x hack-linux-installer.sh
+mkdir ~/.local/share/fonts/
+./hack-linux-installer.sh latest
