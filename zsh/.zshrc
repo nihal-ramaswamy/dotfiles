@@ -87,3 +87,8 @@ source "$XDG_CONFIG_HOME"/cp/cp.sh
 ff()  {
     aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
 }
+
+
+# AWS 
+export AWS_CLI_AUTO_PROMPT=on
+eval "$(~/.local/bin/mise activate)"
