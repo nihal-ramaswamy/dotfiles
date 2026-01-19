@@ -45,6 +45,8 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --colors $realpath'
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Shell Integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
@@ -79,3 +81,4 @@ export SDKMAN_DIR="$XDG_DATA_HOME/.sdkman"
 
 # Competitive Programming
 source "$XDG_CONFIG_HOME"/cp/cp.sh
+

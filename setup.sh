@@ -6,7 +6,6 @@ chsh -s $(which zsh)
 sudo apt install vim 
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
-sudo apt install python-neovim
 sudo apt install python3-neovim
 sudo apt install neovim
 ## Vimplug
@@ -30,8 +29,17 @@ sudo apt install git
 # Antidote 
 git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.local/share/.antidote
 
-# Hack Font
-curl -L -O https://raw.githubusercontent.com/source-foundry/hack-linux-installer/master/hack-linux-installer.sh
-chmod +x hack-linux-installer.sh
-mkdir ~/.local/share/fonts/
-./hack-linux-installer.sh latest
+
+# fzf 
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+# Kitty 
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+mkdir ~/.local/bin
+ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+echo 'kitty.desktop' > ~/.config/xdg-terminals.list

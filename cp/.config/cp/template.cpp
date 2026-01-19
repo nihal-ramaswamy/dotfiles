@@ -1,22 +1,12 @@
-#include <algorithm>
-#include <array>
-#include <bitset>
-#include <cassert>
-#include <chrono>
-#include <cmath>
-#include <concepts>
-#include <cstring>
-#include <deque>
-#include <functional>
-#include <iomanip>
-#include <iostream>
-#include <map>
-#include <numeric>
-#include <queue>
-#include <random>
-#include <ranges>
-#include <set>
-#include <vector>
+#include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+using namespace std;
+
+template <class T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+template <class K, class V> using ordered_map = tree<K, V, less<K>, rb_tree_tag, tree_order_statistics_node_update>;
+using ll = long long;
 
 #ifdef DEBUG
 #include "../scripts/debugger.hpp"
@@ -24,9 +14,6 @@
 #else
 #define debug_out(...) 42;
 #endif
-
-using namespace std;
-using ll = long long;
 
 void test_case([[maybe_unused]] int _tt) {
 }
