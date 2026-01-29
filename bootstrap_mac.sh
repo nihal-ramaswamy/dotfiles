@@ -16,7 +16,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.local/share/.tmux/plugins/tpm
 
 # Dotfile manager
 brew install stow
-stow -vSt ~ brew git vim zsh antidote tmux cp nvim aerospace
+stow -vSt ~ brew git vim zsh antidote tmux cp
 
 brew bundle --file $HOME/.config/brew/.Brewfile
 
