@@ -82,3 +82,4 @@ export SDKMAN_DIR="$XDG_DATA_HOME/.sdkman"
 # Competitive Programming
 source "$XDG_CONFIG_HOME"/cp/cp.sh
 
+export PATH=$HOME/.local/bin:$PATH

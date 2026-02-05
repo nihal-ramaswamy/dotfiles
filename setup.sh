@@ -18,10 +18,8 @@ sudo apt update
 sudo apt install mullvad-browser
 
 # Tmux
+git clone https://github.com/tmux-plugins/tpm ~/.local/share/.tmux/plugins/tpm/tpm
 sudo apt install tmux
-
-# i3wm
-sudo apt install i3
 
 # git
 sudo apt install git
@@ -43,3 +41,9 @@ cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/appli
 sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
 sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
 echo 'kitty.desktop' > ~/.config/xdg-terminals.list
+
+# Zed 
+curl -f https://zed.dev/install.sh | sh
+
+# Zoxide 
+sudo apt install zoxide
