@@ -47,3 +47,6 @@ curl -f https://zed.dev/install.sh | sh
 
 # Zoxide 
 sudo apt install zoxide
+
+# xclip
+sudo apt install xclip

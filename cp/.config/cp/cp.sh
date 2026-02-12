@@ -9,12 +9,14 @@ function cpt() {
 
 function cpr() {
 	fileName=$1
-	g++ -Wall -Wextra -Wconversion -DONLINE_JUDGE -Wl,-stack_size,0x10000000 -O2 -std=c++20 $fileName -o ${fileName%.cpp}
+	ulimit -s unlimited
+	g++ -Wall -Wextra -Wconversion -DONLINE_JUDGE -O2 -std=c++20 $fileName -o ${fileName%.cpp}
 }
 
 function cpb() {
 	fileName=$1
-	g++ -std=c++20 -DDEBUG -O2 -Wall -Wshadow -Wextra -Wno-unused-result -Wfloat-equal -Wcast-qual -Wcast-align -Wl,-stack_size,0x10000000 -g -fstack-protector -D_GLIBCXX_DEBUG $fileName -o ${fileName%.cpp}
+	ulimit -s unlimited
+	g++ -std=c++20 -DDEBUG -O2 -Wall -Wshadow -Wextra -Wno-unused-result -Wfloat-equal -Wcast-qual -Wcast-align -g -fstack-protector -D_GLIBCXX_DEBUG $fileName -o ${fileName%.cpp}
 }
 
 function stress() {
