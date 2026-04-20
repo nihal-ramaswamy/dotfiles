@@ -1,5 +1,7 @@
 tap "homebrew/bundle"
 
+brew "pure"
+
 cask "citrix-workspace"
 cask "claude"
 cask "claude-code"
